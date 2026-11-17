@@ -19,18 +19,18 @@ footer{font-size:12px;color:#8a9ba8;margin-top:24px}
 <main class="wrap">
 <div class="eyebrow">ACCESSO A DOCUMENTAZIONE RISERVATA</div>
 <h1>Portale di consultazione</h1>
-<p>Il fascicolo è accessibile esclusivamente con un invito personale valido per un periodo limitato e un codice di verifica comunicato separatamente.</p>
+<p>Il fascicolo è accessibile esclusivamente con un invito personale con durata configurabile oppure accesso permanente revocabile e un codice di verifica comunicato separatamente.</p>
 <div id="connected" hidden><a id="openApp" class="button" href="#" rel="noreferrer noopener">Amministrazione del fascicolo</a></div>
 <div id="pending" class="note">Il servizio di consultazione è in configurazione. Per accedere utilizza il collegamento personale ricevuto dal responsabile del fascicolo.</div>
 <div class="note">Nessun documento sanitario è pubblicato su questo sito. I contenuti vengono recuperati esclusivamente dopo la verifica dell'accesso nel servizio riservato.</div>
-<footer>Portale documentale · Accesso soggetto a scadenza e revoca</footer>
+<footer>Portale documentale · Accessi revocabili e con durata configurabile</footer>
 </main>
 <script>
 'use strict';
-// The deployed Google Apps Script web-app URL can be set here after owner-controlled deployment.
+// The protected stable gateway URL can be set here after owner-controlled deployment.
 // The public site deliberately contains NO patient information, token, PIN, Drive IDs or document index.
-const AUTH_APP_URL = 'https://script.google.com/macros/s/AKfycbx-hGEnsx4tpxYhdyvdvm6BicQbglM8887tgLFfFepQ9aVjPHYcKARAmzsJJs0Zc_bd/exec';
-if(/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(AUTH_APP_URL)){
+const AUTH_APP_URL = 'https://clinical-vault-gateway-gtr2500.netlify.app/';
+if(/^https:\/\/clinical-vault-gateway-gtr2500\.netlify\.app\/$/.test(AUTH_APP_URL)){
   document.getElementById('openApp').href=AUTH_APP_URL+'?admin=1';
   document.getElementById('connected').hidden=false;
   document.getElementById('pending').hidden=true;
